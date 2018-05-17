@@ -41,15 +41,30 @@ document
 .querySelector("#blow-up button")
 .addEventListener('click',function(){
   // TASK #4}
-  var redCircleSelector = document.querySelector('#circle-red')
+  var redCircleSelector = document.querySelector('.circle-red')
   var redCircleStyle = window.getComputedStyle(redCircleSelector)
+  var blowUpWidth = parseInt(redCircleStyle.width)
 
-  redCircleSelector.style.height="40px"
+
+  console.log(blowUpWidth)
+  if (blowUpWidth < 320) {
+    redCircleSelector.style.width = (blowUpWidth*2)+"px"
+    redCircleSelector.style.height = (blowUpWidth*2)+"px"
+
+  }
+  else {
+    redCircleSelector.style.width = "40px"
+    redCircleSelector.style.height = "40px"
+
+  }
 
 })
 
-document.querySelector("#remove button").addEventListener('click',function(){
+document
+.querySelector("#remove button")
+.addEventListener('click',function(){
   // TASK #5
+  
 })
 
 
