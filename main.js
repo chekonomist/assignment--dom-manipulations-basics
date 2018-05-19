@@ -64,16 +64,47 @@ document
 .querySelector("#remove button")
 .addEventListener('click',function(){
   // TASK #5
-  
+var inactiveUsers = [...document.querySelectorAll('.inactive')]
+
+for (var i = 0; i < inactiveUsers.length; i++) {
+  inactiveUsers[i].style.display = 'none'
+}
+
 })
 
 
-document.querySelector("#reverse-squares button").addEventListener('click',function(){
+document
+.querySelector("#reverse-squares button")
+.addEventListener('click',function(){
   // TASK #6
+  var allTheSquaresEl = [...document.querySelectorAll('.answer-box .square')]
+  var reverseSquares = allTheSquaresEl.reverse()
+
+  var containerEl = document.querySelector("#reverse-squares .answer-box")
+  containerEl.innerHTML = ''
+
+  reverseSquares.forEach( function(colorEl){
+    containerEl.appendChild(colorEl)
+  })
+  // console.log(typeof reverseSquares)
+
 })
 
-document.querySelector("#pig-latin button").addEventListener('click',function(){
+document
+.querySelector("#pig-latin button")
+.addEventListener('click',function(){
   // TASK #7
+  var listContentEl = document.querySelectorAll('#tasks li')
+  var listContentArr = [...listContentEl]
+
+  for (var i = 0; i < listContentArr.length; i++) {
+
+  var stringSplit = listContentArr[i].textContent.split("")
+  var stringReverse = stringSplit.reverse()
+  var stringRevNoCommas = stringReverse.join("")
+  listContentArr[i].textContent = stringRevNoCommas
+  }
+
 })
 
 document.querySelector("#cycle-image button").addEventListener('click',function(){
